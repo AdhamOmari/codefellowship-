@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+
+
+<div>
+
+    <Card>
+        <ListGroup variant="flush">
+            <Card.Body>
+                <Card.Title>USER NAME</Card.Title>
+                <Card.Text class="list-group-item"  th:text="${username}">
+                </Card.Text>
+            </Card.Body>
+
+            <Card.Body>
+                <Card.Title>FIRST NAME</Card.Title>
+                <Card.Text class="list-group-item"  th:text="${firstName}">
+                </Card.Text>
+            </Card.Body>
+
+            <Card.Body>
+                <Card.Title>LAST NAME</Card.Title>
+                <Card.Text  class="list-group-item" th:text="${lastName}">
+
+                </Card.Text>
+            </Card.Body>
+
+            <Card.Body>
+
+                <Card.Title>DATE OF BIRTH</Card.Title>
+                <Card.Text class="list-group-item"  th:text="${dateOfBirth}">
+
+                </Card.Text>
+            </Card.Body>
+
+            <Card.Body>
+                <Card.Title>BIO</Card.Title>
+                <Card.Text class="list-group-item" th:text="${bio}">
+
+                </Card.Text>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljZkkRywYKrvWq89YZZ6bZFWoOu9_b_vCgA&usqp=CAU"
+
+
+            </Card.Body>
+        </ListGroup>
+    </Card>
+</div>
+</body>
+
+</html>
