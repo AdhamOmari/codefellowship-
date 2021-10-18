@@ -11,19 +11,19 @@
         <ListGroup variant="flush">
             <Card.Body>
                 <Card.Title>USER NAME</Card.Title>
-                <Card.Text class="list-group-item"  th:text="${username}">
+                <Card.Text class="list-group-item" th:text="${username}">
                 </Card.Text>
             </Card.Body>
 
             <Card.Body>
                 <Card.Title>FIRST NAME</Card.Title>
-                <Card.Text class="list-group-item"  th:text="${firstName}">
+                <Card.Text class="list-group-item" th:text="${firstName}">
                 </Card.Text>
             </Card.Body>
 
             <Card.Body>
                 <Card.Title>LAST NAME</Card.Title>
-                <Card.Text  class="list-group-item" th:text="${lastName}">
+                <Card.Text class="list-group-item" th:text="${lastName}">
 
                 </Card.Text>
             </Card.Body>
@@ -31,7 +31,7 @@
             <Card.Body>
 
                 <Card.Title>DATE OF BIRTH</Card.Title>
-                <Card.Text class="list-group-item"  th:text="${dateOfBirth}">
+                <Card.Text class="list-group-item" th:text="${dateOfBirth}">
 
                 </Card.Text>
             </Card.Body>
@@ -41,12 +41,37 @@
                 <Card.Text class="list-group-item" th:text="${bio}">
 
                 </Card.Text>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljZkkRywYKrvWq89YZZ6bZFWoOu9_b_vCgA&usqp=CAU"
 
 
             </Card.Body>
         </ListGroup>
     </Card>
+
+    <div>
+
+
+        <form class="px-4 py-3" th:action="@{/addpost}" method="post" style="width: 70%;">
+            <div class="form-group">
+                <label for="body" id="body">Type Your Post</label>
+                <textarea class="form-control" rows="3" field="*{body}" name="body" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+
+
+        <div>
+            <h3> Your Posts : </h3>
+            <ul th:each="post : ${postList}" class="list-group" style="width: 70%;">
+                <li class="list-group-item disabled">Post :<span th:text="${post.body}"></span><br/>
+                <li class="list-group-item disabled">Posted By :<span th:text="${post.user.username}"></span><br/>
+
+                </li>
+                <br/>
+            </ul>
+
+        </div>
+    </div>
+</div>
 </div>
 </body>
 
